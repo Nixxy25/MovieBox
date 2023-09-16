@@ -2,7 +2,7 @@ import React from 'react'
 
 function Carouselpage(props) {
   return (
-    <div>
+    <div className='carousel'>
         <img className='poster-img' src={`https://image.tmdb.org/t/p/original${props.items.backdrop_path }`}></img>
 
         <div className='carousel-page'>

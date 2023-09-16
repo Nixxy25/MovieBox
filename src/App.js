@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Header from './Component/Header';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Carouselpage from './Component/Carouselpage';
+import Card from "./Component/Card"
+import Footer from './Component/Footer';
+import Headerpage from './Component/Headerpage';
+import Moviepage from './Pages/Moviepage';
 
 
 function App() {
   const [movie, setMovie] = useState([])
 
   useEffect(() => {
-    fetch("https://api.themoviedb.org/3/discover/movie?api_key=467f875d76ce5f71c9257058f2d8e992")
+    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=467f875d76ce5f71c9257058f2d8e992")
       .then(response => response.json())
       
       .then(data => {
@@ -50,13 +53,30 @@ function App() {
     )
   })
 
+  const card = movie.map(items =>{
+    return(
+      <Card
+      items={items}
+      />
+    )
+  })
+
+  const moviepage = movie.map(items =>{
+    return(
+      <Moviepage
+      items={items} 
+      />
+    )
+  })
   return (
     <div>
-      <Header/>
+      <Headerpage/>
       <Carousel responsive={responsive}>
         {carousel}
       </Carousel>
-    
+      {card}
+      <Footer/>
+      {moviepage}
     </div>
   )
 }
