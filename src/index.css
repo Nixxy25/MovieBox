@@ -94,7 +94,7 @@ body{
 
 /* Card section */
 .movie-list{
-  margin: 50px 35px 0px 35px;
+  margin: 30px 40px;
   display: inline-block;
   align-items: center;  
   font-family: Verdana, Geneva, Tahoma, sans-serif;

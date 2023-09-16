@@ -5,7 +5,7 @@ import Carouselpage from './Component/Carouselpage';
 import Card from "./Component/Card"
 import Footer from './Component/Footer';
 import Headerpage from './Component/Headerpage';
-import Moviepage from './Pages/Moviepage';
+
 
 
 function App() {
@@ -61,13 +61,7 @@ function App() {
     )
   })
 
-  const moviepage = movie.map(items =>{
-    return(
-      <Moviepage
-      items={items} 
-      />
-    )
-  })
+  
   return (
     <div>
       <Headerpage/>
@@ -76,7 +70,6 @@ function App() {
       </Carousel>
       {card}
       <Footer/>
-      {moviepage}
     </div>
   )
 }
